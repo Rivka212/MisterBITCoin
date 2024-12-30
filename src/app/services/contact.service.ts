@@ -1,12 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Observable, BehaviorSubject, throwError, from, tap, retry, catchError } from 'rxjs';
-// import { Contact } from '../models/contact.model';
-import { Contact } from './contact.model';
+import { Contact } from '../models/contact.model';
+// import { Contact } from './contact.model';
 import { storageService } from './async-storage.service';
 import { HttpErrorResponse } from '@angular/common/http';
+
 const ENTITY = 'contacts'
-
-
 
 @Injectable({
     providedIn: 'root'
@@ -41,7 +40,7 @@ export class ContactService {
     }
 
     public getContactById(id: string): Observable<Contact> {
-        return from(storageService.get(ENTITY, id))
+        return from(storageService.get<Contact>(ENTITY, id))
             .pipe(catchError(err => throwError(() => `Contact id ${id} not found!`)))
     }
 
