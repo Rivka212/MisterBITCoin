@@ -1,0 +1,6 @@
+<section class="contact-details-page">
+    <img *ngIf="firstContact" src="https://robohash.org/{{firstContact._id[0]}}?set=set5" alt="firstContact-img">
+    <h3>Name: {{firstContact?.name}}</h3>
+    <h3>Phone: {{firstContact?.phone}}</h3>
+    <h3>Email: {{firstContact?.email}}</h3>
+</section>
