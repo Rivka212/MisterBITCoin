@@ -1,0 +1,20 @@
+.contact-preview{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 10px;
+    background-color: aliceblue;
+    margin: 20px;
+    border-radius: 50px;
+    max-width: 280px;
+
+    img{
+        width: 10%;
+        margin-right: 10px;
+    }
+
+    p{
+        font-size: 1.1em;
+        font-weight: 500;
+    }
+}
