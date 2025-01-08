@@ -8,6 +8,9 @@ import { ContactIndexComponent } from './pages/contact-index/contact-index.compo
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { ContactListComponent } from './cmps/contact-list/contact-list.component';
 import { ContactPreviewComponent } from './cmps/contact-preview/contact-preview.component';
+import { ContactDetailsPageComponent } from './pages/contact-details-page/contact-details-page.component';
+import { ContactFilterComponent } from './cmps/contact-filter/contact-filter.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,11 +18,14 @@ import { ContactPreviewComponent } from './cmps/contact-preview/contact-preview.
     ContactIndexComponent,
     HomePageComponent,
     ContactListComponent,
-    ContactPreviewComponent
+    ContactPreviewComponent,
+    ContactDetailsPageComponent,
+    ContactFilterComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
     provideHttpClient(withInterceptorsFromDi())

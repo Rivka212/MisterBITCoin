@@ -1,3 +1,4 @@
 <section class="contact-index">
-<contact-list  *ngIf="contacts" [contacts]="contacts"/>
+    <contact-filter />
+    <contact-list *ngIf="contacts" [contacts]="contacts" />
 </section>
