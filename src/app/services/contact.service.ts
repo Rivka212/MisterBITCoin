@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Observable, BehaviorSubject, throwError, from, tap, retry, catchError, take } from 'rxjs';
-import { Contact, ContactFilter } from '../models/contact.model';
-// import { Contact } from './contact.model';
+import { Contact } from '../models/contact.model';
 import { storageService } from './async-storage.service';
 import { HttpErrorResponse } from '@angular/common/http';
+import { ContactFilter } from '../models/contact.filter';
 
 const ENTITY = 'contacts'
 

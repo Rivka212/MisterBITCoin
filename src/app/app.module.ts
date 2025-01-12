@@ -11,7 +11,9 @@ import { ContactPreviewComponent } from './cmps/contact-preview/contact-preview.
 import { ContactDetailsPageComponent } from './pages/contact-details-page/contact-details-page.component';
 import { ContactFilterComponent } from './cmps/contact-filter/contact-filter.component';
 import { FormsModule } from '@angular/forms';
-
+import { StatisticComponent } from './pages/statistic/statistic.component';
+import { provideCharts, withDefaultRegisterables } from 'ng2-charts';
+// import { NgChartsModule } from 'ng2-charts';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,15 +22,19 @@ import { FormsModule } from '@angular/forms';
     ContactListComponent,
     ContactPreviewComponent,
     ContactDetailsPageComponent,
-    ContactFilterComponent
+    ContactFilterComponent,
+    StatisticComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    // NgChartsModule,
+
   ],
   providers: [
-    provideHttpClient(withInterceptorsFromDi())
+    provideHttpClient(withInterceptorsFromDi()),
+    provideCharts(withDefaultRegisterables()),
   ],
   bootstrap: [AppComponent]
 })

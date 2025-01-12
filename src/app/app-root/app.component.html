@@ -5,8 +5,7 @@
     <section class="action-btn">
       <button (click)="showPage(1)">Home</button>
       <button (click)="showPage(2)">Contacts</button>
-      <button (click)="showPage(3)">Contact Details</button>
-      <!-- <button (click)="showPage(4)">Watcher App</button> -->
+      <button (click)="showPage(3)">Statistic</button>
     </section>
   </header>
   <div *ngIf="currentPage === 1">
@@ -18,12 +17,7 @@
   </div>
 
   <div *ngIf="currentPage === 3">
-    <contact-details-page />
-
+    <!-- <contact-details-page /> -->
+    <statistic/>
   </div>
-
-  <!-- <div *ngIf="currentPage === 4">
-    <watcher-app></watcher-app>
-  </div> -->
-
 </section>

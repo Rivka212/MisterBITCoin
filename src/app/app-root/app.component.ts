@@ -14,6 +14,8 @@ export class AppComponent implements OnInit {
   private contactService = inject(ContactService)
   private subscription!: Subscription
 
+  coins = ''
+
   ngOnInit(): void {
     this.subscription = this.contactService.loadContacts()
     // this.contactService.loadContacts()
@@ -26,5 +28,11 @@ export class AppComponent implements OnInit {
 
   ngOnDestroy(): void {
     this.subscription?.unsubscribe
+  }
+
+  currentPage: number = 1
+
+  showPage(page: number) {
+    this.currentPage = page
   }
 }

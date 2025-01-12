@@ -1,4 +1,9 @@
 <section class="contact-index">
-    <contact-filter />
-    <contact-list *ngIf="contacts" [contacts]="contacts" />
+    <contact-details-page (onBack)="selectedContactId = null" *ngIf="selectedContactId; else contactList"
+        [contactId]="selectedContactId"></contact-details-page>
+
+    <ng-template #contactList>
+        <contact-filter></contact-filter>
+        <contact-list (onSelect)="selectedContactId = $event" [contacts]="contacts$ | async"></contact-list>
+    </ng-template>
 </section>

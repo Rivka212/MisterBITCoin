@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Contact } from '../../models/contact.model';
 
 @Component({
@@ -9,5 +9,7 @@ import { Contact } from '../../models/contact.model';
   styleUrl: './contact-list.component.scss'
 })
 export class ContactListComponent {
+  
   @Input() contacts: Contact[] | null = null
+  @Output() onSelect = new EventEmitter<string>()
 }

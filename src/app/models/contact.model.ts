@@ -5,6 +5,4 @@ export interface Contact {
     _id: string
 }
 
-export interface ContactFilter {
-    term: string
-}
+
