@@ -18,9 +18,9 @@ export class ContactIndexComponent  {
   constructor(private contactService: ContactService) {
    this.contacts$  = this.contactService.contacts$;
    }
+   
   // contacts$: Observable<Contact[]> = this.contactService.contacts$;
   // selectedContactId: string | null = null
-
 
   // constructor(private contactService: ContactService) { }
 }

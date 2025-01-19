@@ -16,6 +16,7 @@ export class ContactPreviewComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+ 
   }
 
   onSelectContact() {

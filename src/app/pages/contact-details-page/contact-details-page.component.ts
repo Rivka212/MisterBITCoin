@@ -1,7 +1,8 @@
 import { Component, EventEmitter, inject, Input, OnInit, Output } from '@angular/core';
 import { Contact } from '../../models/contact.model';
 import { ContactService } from '../../services/contact.service';
-import { Observable } from 'rxjs';
+import { Observable, switchMap } from 'rxjs';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'contact-details-page',
@@ -12,13 +13,25 @@ import { Observable } from 'rxjs';
 })
 export class ContactDetailsPageComponent implements OnInit {
 
-    @Input() contactId!: string
-    @Output() onBack = new EventEmitter()
-    contact$!: Observable<Contact>
+  private contactService = inject(ContactService)
+  private route = inject(ActivatedRoute)
+  private router = inject(Router)
 
-    constructor(private contactService: ContactService) { }
+  @Input() contactId!: string
+  // @Output() onBack = new EventEmitter()
+  contact$!: Observable<Contact>
 
-    ngOnInit() {
-        this.contact$ = this.contactService.getContactById(this.contactId)
-    }
+  // constructor(private contactService: ContactService) { }
+
+  ngOnInit() {
+    console.log('contactId:', this.contactId);
+    this.contact$ = this.route.params.pipe(
+      switchMap(params => this.contactService.getContactById(params['contactId']))
+    )
+  }
+  onBack(){
+    this.router.navigateByUrl('/contact')
+  }
+
 }
+

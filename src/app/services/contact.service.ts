@@ -52,6 +52,7 @@ export class ContactService {
     }
 
     public getContactById(id: string): Observable<Contact> {
+        console.log(id);
         return from(storageService.get<Contact>(ENTITY, id))
             .pipe(catchError(err => throwError(() => `Contact id ${id} not found!`)))
     }

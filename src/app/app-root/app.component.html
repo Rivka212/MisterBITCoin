@@ -1,14 +1,23 @@
 <section class="app-root">
   <header>
     <h1>MisterBITCoin</h1>
+    <nav class="action">
+      <a routerLink="/home" routerLinkActive="active">Home</a>
+      <a routerLink="/contact" routerLinkActive="active">Contacts</a>
+      <a routerLink="/chart" routerLinkActive="active">Statistic</a>
+    </nav> 
+  </header>
+   <router-outlet />
+  </section>
 
-    <section class="action-btn">
+  
+    <!-- <section class="action-btn">
       <button (click)="showPage(1)">Home</button>
       <button (click)="showPage(2)">Contacts</button>
       <button (click)="showPage(3)">Statistic</button>
-    </section>
-  </header>
-  <div *ngIf="currentPage === 1">
+    </section> -->
+ 
+  <!-- <div *ngIf="currentPage === 1">
     <home-page />
   </div>
 
@@ -17,7 +26,6 @@
   </div>
 
   <div *ngIf="currentPage === 3">
-    <!-- <contact-details-page /> -->
-    <statistic/>
-  </div>
-</section>
+    <contact-details-page /> -->
+  <!-- <statistic/>
+  </div> -->
