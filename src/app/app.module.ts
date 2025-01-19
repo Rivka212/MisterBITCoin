@@ -12,8 +12,10 @@ import { ContactDetailsPageComponent } from './pages/contact-details-page/contac
 import { ContactFilterComponent } from './cmps/contact-filter/contact-filter.component';
 import { FormsModule } from '@angular/forms';
 import { StatisticComponent } from './pages/statistic/statistic.component';
+import { ChartComponent } from './cmps/chart/chart.component';
+// import { Ng2ChartsModule } from 'ng2-charts';
 import { provideCharts, withDefaultRegisterables } from 'ng2-charts';
-// import { NgChartsModule } from 'ng2-charts';
+// import { ChartsModule } from 'ng2-charts'; 
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,14 +25,14 @@ import { provideCharts, withDefaultRegisterables } from 'ng2-charts';
     ContactPreviewComponent,
     ContactDetailsPageComponent,
     ContactFilterComponent,
-    StatisticComponent
+    StatisticComponent,
+    ChartComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    // NgChartsModule,
-
+    // NgChartsModule
   ],
   providers: [
     provideHttpClient(withInterceptorsFromDi()),

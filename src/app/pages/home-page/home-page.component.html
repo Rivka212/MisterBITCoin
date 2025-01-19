@@ -1,8 +1,10 @@
-<!-- <section *ngIf="user$ | async as user" class="home-page"> -->
+<section *ngIf="user$ | async as user" class="home-page">
         <section class="home-page">        
-        <!-- <h2>Hello{{ user.name }}!</h2> -->
-        <img src="/assets/icons/coins.png" alt="coins">
-        <!-- <p> Coins:{{ user.coins }}</p> -->
-        <img src="/assets/icons/bitcoin.png" alt="BTC">
-        <!-- <p> BTC: {{ BTC$ | async }}</p> -->
+        <h2>Hello {{ user.name }}!</h2>
+        <img [src]="'./../../../assets/icons/coins.png'" alt="coins">
+        <p> Coins: {{ user.coins }}</p>
+        <!-- <img src="/assets/icons/bitcoin.png" alt="BTC"> -->
+        <!-- <img src="./../../../assets/icons/bitcoin.png" alt=""> -->
+        <img src="/assets/icons/coins.png" alt="">
+        <p> BTC: {{ BTC$ | async }}</p>
 </section>
