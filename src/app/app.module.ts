@@ -15,6 +15,7 @@ import { StatisticComponent } from './pages/statistic/statistic.component';
 import { ChartComponent } from './cmps/chart/chart.component';
 // import { Ng2ChartsModule } from 'ng2-charts';
 import { provideCharts, withDefaultRegisterables } from 'ng2-charts';
+import { ContactEditComponent } from './pages/contact-edit/contact-edit.component';
 // import { ChartsModule } from 'ng2-charts'; 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { provideCharts, withDefaultRegisterables } from 'ng2-charts';
     ContactDetailsPageComponent,
     ContactFilterComponent,
     StatisticComponent,
-    ChartComponent
+    ChartComponent,
+    ContactEditComponent
   ],
   imports: [
     BrowserModule,

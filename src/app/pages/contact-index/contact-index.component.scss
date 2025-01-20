@@ -1,7 +1,20 @@
-.contact-index{
+.contact-index {
     flex-direction: column;
     display: flex;
     align-items: center;
     justify-content: center;
-}
 
+    .edit-btn {
+        height: 20px;
+        background-color: rgb(154, 51, 170);
+        padding: 5px;
+        border-radius: 5px;
+        margin-top: 10px;
+        margin-right: 200px;
+
+        a {
+            color: aliceblue;
+            text-decoration: none;
+        }
+    }
+}
