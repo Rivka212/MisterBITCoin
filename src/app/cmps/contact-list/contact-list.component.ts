@@ -12,4 +12,5 @@ export class ContactListComponent {
   
   @Input() contacts: Contact[] | null = null
   @Output() onSelect = new EventEmitter<string>()
+  @Output() remove = new EventEmitter<string>()
 }

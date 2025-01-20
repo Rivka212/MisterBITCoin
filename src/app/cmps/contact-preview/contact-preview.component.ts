@@ -11,7 +11,9 @@ import { Contact } from '../../models/contact.model';
 export class ContactPreviewComponent implements OnInit {
 
   @Input() contact!: Contact
-  @Output() onSelect = new EventEmitter<string>()
+  // @Output() onSelect = new EventEmitter<string>()
+  @Output() remove = new EventEmitter<string>()
+
 
   constructor() { }
 
@@ -19,10 +21,10 @@ export class ContactPreviewComponent implements OnInit {
  
   }
 
-  onSelectContact() {
-    this.onSelect.emit(this.contact._id)
-  }
+  // onSelectContact() {
+  //   this.onSelect.emit(this.contact._id)
+  // }
+
 }
-// export class ContactPreviewComponent {
-// @Input() contact!:Contact
-// }
+
+
