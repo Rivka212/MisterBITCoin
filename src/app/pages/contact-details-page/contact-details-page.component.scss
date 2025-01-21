@@ -1,11 +1,38 @@
-.contact-details-page{
+.contact-details-page {
     padding: 30px;
-    img{
+
+    img {
         width: 20%;
         padding-bottom: 10px;
     }
 
-    h3{
+    h3 {
         padding: 6px;
+    }
+
+    .actions {
+        display: flex;
+        justify-content: start;
+        align-content: center;
+        margin-top: 10px;
+    }
+
+    .actions>* {
+        color: aliceblue;
+        background-color: rgb(143, 69, 156);
+        border-radius: 8px;
+        padding: 7px;
+        border: none;
+        box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+        margin-right: 10px;
+    }
+
+    .remove-btn {
+        height: 35px;
+        width: 35px;
+        font-size: 18px;
+    }
+    a{
+        text-decoration: none;
     }
 }

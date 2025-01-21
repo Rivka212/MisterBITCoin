@@ -3,5 +3,11 @@
     <h3>Name: {{contact.name}}</h3>
     <h3>Phone: {{contact.phone}}</h3>
     <h3>Email: {{contact.email}}</h3>
-    <button (click)="onBack()">Back</button>
+
+    <section class="actions">
+        <button (click)="onBack()">Back</button>
+        <a [routerLink]="['/contact', 'edit', contact._id]">Edit</a>
+        <button *ngIf="contact?._id" (click)="onRemoveContact(contact._id || '')" class="remove-btn">x</button>
+    </section>
 </section>
+<router-outlet />

@@ -4,8 +4,4 @@
         <img src="https://robohash.org/{{contact._id}}?set=set5" alt="contact-img">
         <p>{{contact.name}}</p>
     </a>
-    <section class="actions">
-         <a [routerLink]="['/contact', 'edit', contact._id]">Edit</a>
-        <button (click)="remove.emit(contact._id)" class="remove-btn">x</button>
-    </section>
 </section>

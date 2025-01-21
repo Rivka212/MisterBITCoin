@@ -26,7 +26,7 @@ export class ContactIndexComponent {
 
   onRemoveContact(contactId: string) {
     // this.loaderService.setIsLoading(true)
-    this.contactService.removeContact(contactId)
+    this.contactService.deleteContact(contactId)
       .pipe(
         takeUntilDestroyed(this.destroyRef),
         // finalize(() => this.loaderService.setIsLoading(false))

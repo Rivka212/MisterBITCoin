@@ -12,7 +12,7 @@ export class ContactPreviewComponent implements OnInit {
 
   @Input() contact!: Contact
   // @Output() onSelect = new EventEmitter<string>()
-  @Output() remove = new EventEmitter<string>()
+  // @Output() remove = new EventEmitter<string>()
 
 
   constructor() { }

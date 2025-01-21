@@ -6,8 +6,9 @@
 
         <div class="edit-btn"><a routerLink="/contact/edit">Add Contact</a></div>
         <contact-filter></contact-filter>
-        <contact-list [contacts]="contacts$ | async" (remove)="onRemoveContact($event)"></contact-list>
+        <contact-list [contacts]="contacts$ | async"></contact-list>
     <!-- </ng-template> -->
     <!-- (onSelect)="selectedContactId = $event" -->
+    <!-- (remove)="onRemoveContact($event) -->
 </section>
 <router-outlet />

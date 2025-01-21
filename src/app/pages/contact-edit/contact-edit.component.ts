@@ -24,13 +24,28 @@ export class ContactEditComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.pipe(
       map(params => params['contactId']),
-      filter(contactId=>!!contactId),
+      filter(contactId => !!contactId),
       switchMap(contactId => this.contactService.getContactById(contactId)),
       takeUntilDestroyed(this.destroyRef)
     ).subscribe(contact => {
       this.contact = contact
     }
     )
+  }
+
+  onRemoveContact(contactId: string): void {
+    this.contactService.deleteContact(contactId)
+      .pipe(
+        takeUntilDestroyed(this.destroyRef),
+      ).subscribe({
+        next: () => {
+          console.log('Contact removed successfully');
+          this.router.navigate(['/contact']);
+        },
+        error: err => {
+          console.error('Error deleting contact:', err);
+        }
+      })
   }
 
   onSaveContact() {

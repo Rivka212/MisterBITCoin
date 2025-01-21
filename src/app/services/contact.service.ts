@@ -61,7 +61,7 @@ export class ContactService {
         return {name:'', phone:'', email:''}
     }
 
-    public removeContact(id: string) {
+    public deleteContact(id: string) {
         return from(storageService.remove(ENTITY, id))
             .pipe(
                 tap(() => {

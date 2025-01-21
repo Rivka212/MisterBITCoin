@@ -1,8 +1,9 @@
-import { Component, EventEmitter, inject, Input, OnInit, Output } from '@angular/core';
+import { Component, DestroyRef, EventEmitter, inject, Input, OnInit, Output } from '@angular/core';
 import { Contact } from '../../models/contact.model';
 import { ContactService } from '../../services/contact.service';
 import { Observable, switchMap } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'contact-details-page',
@@ -20,6 +21,7 @@ export class ContactDetailsPageComponent implements OnInit {
   @Input() contactId!: string
   // @Output() onBack = new EventEmitter()
   contact$!: Observable<Contact>
+    private destroyRef = inject(DestroyRef)
 
   // constructor(private contactService: ContactService) { }
 
@@ -32,6 +34,21 @@ export class ContactDetailsPageComponent implements OnInit {
   onBack(){
     this.router.navigateByUrl('/contact')
   }
+
+   onRemoveContact(contactId: string): void {
+      this.contactService.deleteContact(contactId)
+        .pipe(
+          takeUntilDestroyed(this.destroyRef),
+        ).subscribe({
+          next: () => {
+            console.log('Contact removed successfully');
+            this.router.navigate(['/contact']);
+          },
+          error: err => {
+            console.error('Error deleting contact:', err);
+          }
+        })
+    }
 
 }
 
