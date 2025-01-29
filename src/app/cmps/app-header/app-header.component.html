@@ -1,0 +1,13 @@
+<header class="app-header">
+	<h1>MisterBITCoin</h1>
+	<nav class="action">
+		<a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+		<a routerLink="/contact" routerLinkActive="active">Contacts</a>
+		<a routerLink="/chart" routerLinkActive="active">Statistic</a>
+
+		<section class="auth" *ngIf="loggedInUser$ | async as user">
+			<h3>Hello {{ user.name | titlecase }}!</h3>
+			<button class="capitalize button" (click)="onLogout()">Logout</button>
+		</section>
+	</nav>
+</header>
