@@ -1,10 +1,15 @@
+<button [style.marginBlock.px]="10" (click)="onAddMoveDemo()">Add Move Demo</button>
+
 <section *ngIf="user$ | async as user" class="home-page">
-        <section class="home-page">        
-        <h2>Hello {{ user.name }}!</h2>
+        <h2>Hello {{ user.name | titlecase }}!</h2>
         <img [src]="'./../../../assets/icons/coins.png'" alt="coins">
         <p> Coins: {{ user.coins }}</p>
         <!-- <img src="/assets/icons/bitcoin.png" alt="BTC"> -->
         <!-- <img src="./../../../assets/icons/bitcoin.png" alt=""> -->
         <img src="/assets/icons/coins.png" alt="">
         <p> BTC: {{ BTC$ | async }}</p>
+        <ng-container *ngIf="userMoves$ | async as userMoves">
+		<move-list [contact]="null" [moves]="userMoves"></move-list>
+		<p *ngIf="!userMoves.length">No transactions yet...</p>
+	</ng-container>
 </section>
