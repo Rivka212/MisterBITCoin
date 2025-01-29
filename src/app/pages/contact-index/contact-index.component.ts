@@ -1,44 +1,51 @@
-import { Component, DestroyRef, inject, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, DestroyRef, inject, OnInit } from '@angular/core';
 import { ContactService } from '../../services/contact.service';
 import { Contact } from '../../models/contact.model';
 import { finalize, Observable } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { MsgService } from '../../services/msg.service';
 
 @Component({
   selector: 'contact-index',
   standalone: false,
 
   templateUrl: './contact-index.component.html',
-  styleUrl: './contact-index.component.scss'
+  styleUrl: './contact-index.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
+
 })
-export class ContactIndexComponent {
-  // contacts$: Observable<Contact[]>
-  selectedContactId: string | null = null
+export class ContactIndexComponent implements OnInit {
+  
+  contacts$: Observable<Contact[]>
 
-  private contactService = inject(ContactService)
-  // private loaderService = inject(LoaderService)
-  private destroyRef = inject(DestroyRef)
-  contacts$ = this.contactService.contacts$
+  constructor(
+    private contactService: ContactService,
+    private msgService: MsgService
+  ) {
+    this.contacts$ = this.contactService.contacts$;
+  }
 
-  // constructor(private contactService: ContactService) {
-  //   this.contacts$ = this.contactService.contacts$;
-  // }
+  ngOnInit(): void {
+    this.contacts$ = this.contactService.contacts$
+  }
 
   onRemoveContact(contactId: string) {
-    // this.loaderService.setIsLoading(true)
-    this.contactService.deleteContact(contactId)
-      .pipe(
-        takeUntilDestroyed(this.destroyRef),
-        // finalize(() => this.loaderService.setIsLoading(false))
-      )
-      .subscribe({
-        error: err => console.log('err:', err),
-      })
+    this.contactService.deleteContact(contactId).subscribe({
+      error: err => this.msgService.setErrorMsg(err.message)
+    })
   }
 
-  ngOnDestroy(): void {
+  // onRemoveContact(contactId: string) {
+  //   this.contactService.deleteContact(contactId)
+  //     .pipe(
+  //       takeUntilDestroyed(this.destroyRef),
+  //     )
+  //     .subscribe({
+  //       error: err => console.log('err:', err),
+  //     })
+  // }
 
-  }
+
 }
 
 
