@@ -30,9 +30,4 @@ export class AppComponent implements OnInit {
     this.subscription?.unsubscribe
   }
 
-  currentPage: number = 1
-
-  showPage(page: number) {
-    this.currentPage = page
-  }
 }

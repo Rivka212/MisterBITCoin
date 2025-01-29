@@ -1,51 +1,20 @@
 .app-root {
-    h1 {
-        font-size: 2em;
-        margin-left: 20px;
-        padding: 20px;
-        margin-top: 10px;
-        color: aliceblue;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 
-
-    }
-
-    header {
-        // color: aliceblue;
+    main {
+        flex-grow: 1;
         display: flex;
-        align-self: center;
-        justify-content: space-between;
-        height: 100px;
-        background-color: rgb(147, 94, 161);
-        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
-    }
-
-    .action {
+        flex-direction: column;
+      }
+    
+      footer {
+        height: 50px;
+        background-color: rgb(98, 63, 103);
+        width: 100%;
+        color: whitesmoke;
         display: flex;
-        align-self: center;
-        justify-content: center;
-        margin-right: 20px;
-
-        a {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding-inline: 7px;
-            border-radius: 5px;
-            border: none;
-            margin-inline: 5px;
-            width: 70px;
-            height: 35px;
-            font-size: 17px;
-            font-weight: 600;
-            background-color: rgb(237, 216, 243);
-            color: rgb(77, 75, 75);
-            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
-            cursor: pointer;
-            text-decoration: none;
-        }
-        .active{
-            color: rgb(230, 101, 101);
-        }
-    }
-
+        align-items: center;
+      }
 }
