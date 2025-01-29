@@ -5,7 +5,8 @@ export const storageService = {
     remove,
     query,
     store,
-    load
+    load,
+    makeId
 }
 
 
@@ -27,7 +28,7 @@ async function get<T extends EntityId>(entityType: string, entityId: string): Pr
 
 async function post<T extends EntityId>(entityType: string, newEntity: T): Promise<T> {
     newEntity = JSON.parse(JSON.stringify(newEntity))
-    newEntity._id = _makeId()
+    newEntity._id = makeId()
     const entities = await query<T>(entityType)
     entities.push(newEntity)
     _save(entityType, entities)
@@ -58,7 +59,7 @@ function _save<T>(entityType: string, entities: T[]): void {
     localStorage.setItem(entityType, JSON.stringify(entities))
 }
 
-function _makeId(length = 5): string {
+function makeId(length = 5): string {
     var txt = ''
     var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
     for (var i = 0; i < length; i++) {
