@@ -1,7 +1,8 @@
 <section class="contact-edit">
     <div>
         <h2>{{contact._id ? "Edit" : "Add"}} Contact</h2>
-        <form (ngSubmit)="onSaveContact()">
+        <form *ngIf="contact" (ngSubmit)="onSaveContact()">
+            <!-- [formGroup]="form" -->
             <label for="name">Name: </label>
             <input [(ngModel)]="contact.name" type="text" name="name" id="name">
 
@@ -17,9 +18,5 @@
             </section>
         </form>
     </div>
-    <!-- <section class="actions">
-        <a [routerLink]="['/contact', 'edit', contact._id]">Edit</a>
-        <button *ngIf="contact?._id" (click)="onRemoveContact(contact._id || '')" class="remove-btn">x</button>
-    </section> -->
 </section>
 <router-outlet/>
