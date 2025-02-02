@@ -1,14 +1,10 @@
-<div class="flex center signup-form">
-	<img src="../../../assets/icons/bitcoinlogo.png" alt="">
+<div class="signup-form">
+	<img src="../../../assets/bitcoinlogo.png" alt="">
+	<!-- <img src="assets/icons/bitcoinlogo.png" alt=""> -->
+	<!-- <img src="/src/assets/bitcoinlogo.png" alt=""> -->
 	<div>please sign up</div>
 	<form (ngSubmit)="signUp()">
-		<input
-			type="text"
-			name="userName"
-			placeholder="enter username"
-			[(ngModel)]="userName"
-		/>
+		<input type="text" name="userName" placeholder="enter username" [(ngModel)]="userName" />
 		<button>Signup</button>
 	</form>
 </div>
-
