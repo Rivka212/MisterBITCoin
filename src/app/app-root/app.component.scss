@@ -1,20 +1,25 @@
 .app-root {
-    min-height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  main {
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
+  }
 
-    main {
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
-      }
-    
-      footer {
-        height: 50px;
-        background-color: rgb(98, 63, 103);
-        width: 100%;
-        color: whitesmoke;
-        display: flex;
-        align-items: center;
-      }
+  footer {
+    height: 50px;
+    background-color: rgb(98, 63, 103);
+    width: 100%;
+    color: whitesmoke;
+    display: flex;
+    align-items: center;
+
+    span {
+      margin-left: 20px;
+    }
+  }
+
 }
