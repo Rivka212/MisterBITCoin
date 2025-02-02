@@ -13,7 +13,7 @@ import { ContactFilterComponent } from './cmps/contact-filter/contact-filter.com
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StatisticComponent } from './pages/statistic/statistic.component';
 import { ChartComponent } from './cmps/chart/chart.component';
-// import { Ng2ChartsModule } from 'ng2-charts';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { provideCharts, withDefaultRegisterables } from 'ng2-charts';
 import { ContactEditComponent } from './pages/contact-edit/contact-edit.component';
 import { MoveListComponent } from './cmps/move-list/move-list.component';
@@ -21,6 +21,7 @@ import { TransferFundComponent } from './cmps/transfer-fund/transfer-fund.compon
 import { SignupComponent } from './pages/signup/signup.component';
 import { AppHeaderComponent } from './cmps/app-header/app-header.component';
 import { MsgComponent } from './cmps/msg/msg.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import { ChartsModule } from 'ng2-charts'; 
 @NgModule({
   declarations: [
@@ -45,7 +46,9 @@ import { MsgComponent } from './cmps/msg/msg.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    // NgChartsModule
+    BrowserAnimationsModule,
+    // NgChartsModule,
+    NgxChartsModule,
   ],
   providers: [
     provideHttpClient(withInterceptorsFromDi()),

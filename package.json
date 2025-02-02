@@ -19,6 +19,7 @@
     "@angular/platform-browser": "^19.0.0",
     "@angular/platform-browser-dynamic": "^19.0.0",
     "@angular/router": "^19.0.0",
+    "@swimlane/ngx-charts": "^22.0.0-alpha.0",
     "axios": "^1.7.9",
     "chart.js": "^4.4.7",
     "ng2-charts": "^8.0.0",
